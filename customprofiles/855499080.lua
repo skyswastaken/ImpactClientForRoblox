@@ -4,7 +4,6 @@ local LocalPlayer = Players.LocalPlayer
 local RunService = game:GetService("RunService")
 
 local src = loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/Toon-arch/ImpactClientForRoblox/main/customprofiles/MainScript.lua"))()
-src.SaveFile("custom/855499080")
 local CliSettings = {
     ["Reach"] = false,
     ["Reach_Distance"] = 0.6,
