@@ -2585,10 +2585,8 @@ local opacity = 1
 local backcolor = Color3.new()
 
 --// Saving
-local readfile = readfile or function() end
 pcall(function()
-	local JSONName = ("impact/profiles/" .. SettingsName .. ".JSON")
-	local JSONData = readfile(JSONName)
+	local JSONData = readfile("impact/profiles/" .. SettingsName .. ".JSON")
 	if JSONData then
 		local LUAData = HttpService:JSONDecode(JSONData)
 		saveData.Options = LUAData.Options
@@ -3244,6 +3242,15 @@ end)
 return {
 	["ScreenGui"] = screenGui,
 	["GUI"] = gui,
+	["Prot"] = _ProtectionService,
+	["PanicRunning"] = function()
+		return PanicRunning
+	end,
+	["SaveData"] = function(str1, str2)
+		if str1 ~= nil and typeof(str1) == "string" and str2 ~= nil then
+			saveData[str1] = str2
+		end
+	end,
 	["Watermark"] = function(str)
         if str ~= nil and typeof(str) == "string" then
             _DefaultWatermark = str
