@@ -1,8 +1,3 @@
-if not isfolder or not makefolder or not isfile or not writefile then return end
-if not isfolder("impact") then makefolder("impact") end
-if not isfolder("impact/profiles") then makefolder("impact/profiles") end
-if not isfolder("impact/profiles/custom") then makefolder("impact/profiles/custom") end
-
 local LoadUrl = function(url)
     if url ~= nil and typeof(url) == "string" then
         if string.find(url, "https://") then
